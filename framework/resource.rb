@@ -36,7 +36,7 @@ class Resource
 
   # FrozenSpots
 
-  def get_all
+  def get_all_resources
     @@resources
   end
 
