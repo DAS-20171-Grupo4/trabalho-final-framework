@@ -36,7 +36,7 @@ class Resource
 
   # FrozenSpots
 
-  def get_all
+  def get_all_resources
     @@resources
   end
 
@@ -65,6 +65,11 @@ class Resource
         resource.user.show_info
       end
     end
+  end
+
+  def diz_ola
+    puts "Ola..."
+    self.show_info
   end
 
   # HotSpots

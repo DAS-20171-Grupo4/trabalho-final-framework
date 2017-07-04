@@ -1,5 +1,5 @@
 require_relative 'resource.rb'
-require_relative 'requisition_controller.rb'
+require_relative 'resource_controller.rb'
 
 class User
   attr_accessor :name, :user_code, :permission, :user
@@ -43,6 +43,11 @@ class User
 
   def self.delete(index)
     @@users.delete_at(index)
+  end
+
+  def diz_ola
+    puts "Ola..."
+    self.show_info
   end
 
   # HotSpots
