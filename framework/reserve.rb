@@ -1,6 +1,5 @@
 class Reserve
   attr_accessor :date, :resource, :reserve
-
   @@reserves = []
 
   def initialize(date)
@@ -27,5 +26,14 @@ class Reserve
   def delete(index)
     @@reserves.delete_at(index)
   end
+
+  def search_reservation(reserve, resource)
+   @@reserves.each do |reservation|
+      if reservation.resource == resource && reservation.date == reserve.date
+           return true
+      end
+    end
+  return false
+end
 
 end
