@@ -1,11 +1,10 @@
 class Reserve
-  attr_accessor :date, :hour, :resource, :reserve
+  attr_accessor :date, :resource, :reserve
 
   @@reserves = []
 
-  def initialize(date, hour)
+  def initialize(date)
     @date = date
-    @hour = hour
     @resource = nil
     @@reserves.push self
   end

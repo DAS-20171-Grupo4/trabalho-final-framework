@@ -30,13 +30,12 @@ if __FILE__ == $0
   rs.room_number = "3"
   rs.room_building= "Software"
 
-  reserva = Reserve.new("23-05-2017", "10h")
+  reserva = Reserve.new("23-05-2017")
 
 
   prof.reserve_resource(rs, reserva)
   rs.user.show_info
   puts reserva.date
-  puts reserva.hour
 
 
 end
