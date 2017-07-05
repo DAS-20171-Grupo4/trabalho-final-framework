@@ -1,5 +1,5 @@
 class Resource
-  attr_accessor :name, :description, :resource_code, :user
+  attr_accessor :name, :description, :resource_code
   @@resources = []
   @@validations = {}
 
@@ -30,13 +30,12 @@ class Resource
     @name = name
     @description = description
     @resource_code = resource_code
-    @user = nil
     @@resources.push self
   end
 
   # FrozenSpots
 
-  def get_all_resources
+  def self.get_all
     @@resources
   end
 
@@ -47,23 +46,6 @@ class Resource
   def self.list
     @@resources.each do |resource|
       resource.show_info
-    end
-  end
-
-  def self.list_free
-    @@resources.each do |resource|
-      if user == nil
-        resource.show_info
-      end
-    end
-  end
-
-  def self.list_taken
-    @@resources.each do |resource|
-      if user != nil
-        resource.show_info
-        resource.user.show_info
-      end
     end
   end
 

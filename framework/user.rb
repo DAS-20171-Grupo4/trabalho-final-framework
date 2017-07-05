@@ -14,11 +14,7 @@ class User
   end
 
   # FrozenSpots
-  def get_user(code)
-    @@users.find {|user| user.code==code}
-  end
-
-  def get_all
+  def self.get_all
     @@users
   end
 
@@ -29,11 +25,11 @@ class User
   end
 
   def self.get_by(opt)
-    @@resources.find {|resource| resource.send(opt.keys.first.to_s.slice(0, opt.keys.first.size)) == opt[opt.keys.first]}
+    @@users.find {|user| user.send(opt.keys.first.to_s.slice(0, opt.keys.first.size)) == opt[opt.keys.first]}
   end
 
-  def list_user
-    all_resources = get_all_resources
+  def list_user_resources
+    all_resources = Reserve.get_all
     all_resources.each do |resource|
       if resource.user == self
         resource.show_info
