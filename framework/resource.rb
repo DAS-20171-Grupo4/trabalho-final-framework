@@ -67,11 +67,6 @@ class Resource
     end
   end
 
-  def diz_ola
-    puts "Ola..."
-    self.show_info
-  end
-
   # HotSpots
 
   def show_info

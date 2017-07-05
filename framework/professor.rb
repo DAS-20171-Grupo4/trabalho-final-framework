@@ -1,5 +1,6 @@
 require_relative 'user.rb'
 require_relative 'classroom.rb'
+require_relative 'reserve.rb'
 
 class Professor < User
   attr_accessor :course, :area 
@@ -15,6 +16,8 @@ class Professor < User
   
 end
 
+#TESTANDOOO
+
 if __FILE__ == $0
   prof = Professor.new("Jose","1234","yes")
   
@@ -22,17 +25,18 @@ if __FILE__ == $0
   prof.course = "Software"
   prof.area = "Computação"
 
-  prof.diz_ola
-
   rs = Classroom.new("Sala de reuniao","Sala para realizaçaõ ...","123")
 
   rs.room_number = "3"
   rs.room_building= "Software"
 
-  rs.diz_ola
+  reserva = Reserve.new("23-05-2017", "10h")
 
 
-  prof.reserve_resource(rs)
-  rs.user.diz_ola
+  prof.reserve_resource(rs, reserva)
+  rs.user.show_info
+  puts reserva.date
+  puts reserva.hour
+
 
 end

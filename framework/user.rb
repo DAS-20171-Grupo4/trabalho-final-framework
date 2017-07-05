@@ -45,11 +45,6 @@ class User
     @@users.delete_at(index)
   end
 
-  def diz_ola
-    puts "Ola..."
-    self.show_info
-  end
-
   # HotSpots
   def show_info
   end
