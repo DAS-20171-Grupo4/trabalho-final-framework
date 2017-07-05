@@ -1,7 +1,9 @@
+require_relative 'reserve.rb'
+
 module ResourceController
-  def reserve_resource(resource, reserve)
-  	if reserve.search_reservation(reserve, resource) 
-  		puts "Recurso não disponível!!"
+  def reserve_resource(resource)
+  	if Reserve.search_reservation(resource)
+  		puts "Recurso não disponível!"
   	else
       resource.user = self
       reserve.resource = resource
@@ -9,9 +11,9 @@ module ResourceController
     end
   end
 
-  def free_resource(resource, reserve, index)
+  def free_resource(resource)
       resource.user = nil
-      reserve.delete(index)
-      puts "Reserva cancelada!"
+      reserve.delete(Reserve.search_index(resource))
+      puts "Reserva liberada!"
   end
 end

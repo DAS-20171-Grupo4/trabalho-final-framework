@@ -1,4 +1,4 @@
-require_relative 'user.rb'
+require_relative 'framework/user.rb'
 
 class Student < User
   attr_accessor :semester, :curso 

@@ -1,5 +1,5 @@
 class Resource
-  attr_accessor :name, :description, :resource_code, :user
+  attr_accessor :name, :description, :resource_code
   @@resources = []
   @@validations = {}
 

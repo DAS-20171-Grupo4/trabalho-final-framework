@@ -1,4 +1,4 @@
-require_relative 'resource.rb'
+require_relative 'framework/resource.rb'
 
 class Classroom < Resource
   attr_accessor :room_number, :room_building

@@ -1,26 +1,26 @@
-require_relative 'user.rb'
-require_relative 'classroom.rb'
-require_relative 'reserve.rb'
+require_relative 'framework/user.rb'
+require_relative 'framework/classroom.rb'
+require_relative 'framework/reserve.rb'
 
 class Professor < User
-  attr_accessor :course, :area 
+  attr_accessor :course, :area
 
-  
+
   def show_info
     puts "Nome do Professor:  #{name}"
     puts "Matrícula:  #{user_code}"
-    puts "Diisciplina:  #{course}"
+    puts "Disciplina:  #{course}"
     puts "Área:  #{area}"
   end
 
-  
+
 end
 
 #TESTANDOOO
 
 if __FILE__ == $0
   prof = Professor.new("Jose","1234","yes")
-  
+
 
   prof.course = "Software"
   prof.area = "Computação"

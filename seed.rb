@@ -1,0 +1,7 @@
+require_relative 'framework/reserve.rb'
+require_relative 'framework/resource_controller.rb'
+require_relative 'framework/resource.rb'
+require_relative 'framework/user.rb'
+require_relative 'professor.rb'
+require_relative 'classroom.rb'
+require_relative 'student.rb'

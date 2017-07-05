@@ -1,10 +1,11 @@
 class Reserve
-  attr_accessor :date, :resource, :reserve
+  attr_accessor :date, :resource, :user
   @@reserves = []
 
-  def initialize(date)
+  def initialize(date, resource, user)
     @date = date
-    @resource = nil
+    @resource = resource
+    @user = user
     @@reserves.push self
   end
 
@@ -27,13 +28,24 @@ class Reserve
     @@reserves.delete_at(index)
   end
 
-  def search_reservation(reserve, resource)
+  def self.search_reservation(resource)
    @@reserves.each do |reservation|
-      if reservation.resource == resource && reservation.date == reserve.date
+      if reservation.resource == resource
            return true
       end
     end
-  return false
-end
+    false
+  end
+
+  def self.search_index(resource)
+    index = 0
+    @@reverse.each do |reservation|
+      if reservation.resource == resource
+        return index
+      end
+      index++
+    end
+    index
+  end
 
 end
